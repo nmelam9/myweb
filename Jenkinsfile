@@ -10,25 +10,25 @@ pipeline {
     stages {
         stage('Dev') {
             steps {
-                echo "this is dev deploy ${DEV_ENV}"            
+                echo "this is dev deploy ${BUILD_ID}"            
                 
             }
         }
         stage('Test') {
             steps {
-                echo "{$TEST_ENV}"
+                echo "{$BUILD_NUMBER}"
             }
         }
         
         stage('Stage') {
             steps {
-                echo "{$STAGE_ENV}"
+                echo "{$JOB_NAME}"
             }
         }
         
         stage('Prod') {
             steps {
-                echo "{$PROD_ENV}"
+                echo "{$WORKSPACE}"
             }
         }
         
